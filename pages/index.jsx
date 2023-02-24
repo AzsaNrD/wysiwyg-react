@@ -24,7 +24,7 @@ export default function Home() {
           </div>
           <div className='flex flex-col gap-5'>
             <h2 className='font-medium text-lg md:text-2xl'>Raw</h2>
-            <p>{value}</p>
+            <p className='break-words'>{value}</p>
           </div>
         </div>
       </main>
