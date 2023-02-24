@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import Head from 'next/head';
 import { Inter } from '@next/font/google';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import RichTextEditor from '../components/RichTextEditor';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -17,15 +20,19 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main className={inter.className}>
-        <section>
-          <div>
-            <RichTextEditor setValue={setValue} />
-          </div>
-          <div>
-            <h1>Result</h1>
-            <p>{value}</p>
-          </div>
-        </section>
+        <Container>
+          <Row>
+            <Col>
+              <RichTextEditor setValue={setValue} />
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <h1>Result</h1>
+              <p>{value}</p>
+            </Col>
+          </Row>
+        </Container>
       </main>
     </>
   );
