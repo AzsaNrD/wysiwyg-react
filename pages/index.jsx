@@ -17,7 +17,16 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main className={inter.className}>
-        <RichTextEditor setValue={setValue} />
+        <div className='w-11/12 md:w-9/12 mx-auto flex flex-col gap-10'>
+          <div className='flex flex-col gap-5 mt-10'>
+            <h1 className='text-xl md:text-3xl font-bold'>What You See Is What You Get</h1>
+            <RichTextEditor setValue={setValue} />
+          </div>
+          <div className='flex flex-col gap-5'>
+            <h2 className='font-medium text-lg md:text-2xl'>Raw</h2>
+            <p>{value}</p>
+          </div>
+        </div>
       </main>
     </>
   );
