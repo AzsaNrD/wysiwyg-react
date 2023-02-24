@@ -1,5 +1,11 @@
 import { useRef } from 'react';
-import JoditEditor from 'jodit-react';
+import dynamic from 'next/dynamic';
+
+const importJodit = () => import('jodit-react');
+
+const JoditEditor = dynamic(importJodit, {
+  ssr: false,
+});
 
 export default function RichTextEditor({ setValue }) {
   const editor = useRef(null);
