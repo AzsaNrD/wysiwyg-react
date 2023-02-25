@@ -37,7 +37,7 @@ export default function Home() {
             <button
               className={`${
                 isCopy ? 'bg-emerald-800' : 'bg-neutral-500'
-              } w-fit text-neutral-50 py-1 px-4 rounded`}
+              } w-fit text-neutral-50 py-1 px-4 rounded mb-5`}
               type='button'
               onClick={copyHandler}
             >
