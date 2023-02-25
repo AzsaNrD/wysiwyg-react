@@ -7,6 +7,15 @@ const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   const [value, setValue] = useState('');
+  const [isCopy, setIsCopy] = useState(false);
+
+  const copyHandler = () => {
+    navigator.clipboard.writeText(value);
+    setIsCopy(true);
+    setTimeout(() => {
+      setIsCopy(false);
+    }, 5000);
+  };
 
   return (
     <>
@@ -25,6 +34,15 @@ export default function Home() {
           <div className='flex flex-col gap-5'>
             <h2 className='font-medium text-lg md:text-2xl'>Raw</h2>
             <p className='break-words'>{value}</p>
+            <button
+              className={`${
+                isCopy ? 'bg-emerald-800' : 'bg-neutral-500'
+              } w-fit text-neutral-50 py-1 px-4 rounded`}
+              type='button'
+              onClick={copyHandler}
+            >
+              {isCopy ? 'Copied' : 'Copy'}
+            </button>
           </div>
         </div>
       </main>
